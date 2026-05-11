@@ -1,0 +1,91 @@
+
+<style>
+  @keyframes dash { to { stroke-dashoffset: -22; } }
+  @keyframes pulse { 0%,100%{opacity:0.10} 50%{opacity:0.20} }
+  .flow  { stroke-dasharray: 6 6; animation: dash 1.6s linear infinite; }
+  .flow-2{ stroke-dasharray: 6 6; animation: dash 1.6s linear infinite; animation-delay:.27s; }
+  .flow-3{ stroke-dasharray: 6 6; animation: dash 1.6s linear infinite; animation-delay:.53s; }
+  .flow-4{ stroke-dasharray: 6 6; animation: dash 1.6s linear infinite; animation-delay:.80s; }
+  .flow-5{ stroke-dasharray: 6 6; animation: dash 1.6s linear infinite; animation-delay:1.07s; }
+  .flow-6{ stroke-dasharray: 6 6; animation: dash 1.6s linear infinite; animation-delay:1.33s; }
+  .ring  { animation: pulse 3s ease-in-out infinite; }
+  .ring2 { animation: pulse 3s ease-in-out infinite; animation-delay:.9s; }
+  @media (prefers-reduced-motion: reduce) {
+    .flow,.flow-2,.flow-3,.flow-4,.flow-5,.flow-6{ animation:none; stroke-dasharray:none; }
+    .ring,.ring2{ animation:none; }
+  }
+</style>
+
+<svg width="100%" viewBox="100 112 480 540" role="img">
+  <title>NotifyNOW notification flow</title>
+  <desc>A central document card radiates animated dashed lines outward to six institution icons arranged symmetrically at 60-degree intervals: bank top, pension top-right, subscriptions bottom-right, utilities bottom, car bottom-left, HMRC top-left.</desc>
+
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <!-- Pulse rings -->
+  <circle class="ring"  cx="340" cy="380" r="130" fill="none" stroke="#378ADD" stroke-width="1.2"/>
+  <circle class="ring2" cx="340" cy="380" r="168" fill="none" stroke="#378ADD" stroke-width="0.6"/>
+
+  <!-- Centre card -->
+  <rect x="292" y="332" width="96" height="96" rx="14" fill="#0C447C"/>
+  <line x1="310" y1="360" x2="370" y2="360" stroke="#85B7EB" stroke-width="2.5" stroke-linecap="round" opacity="0.65"/>
+  <line x1="310" y1="374" x2="370" y2="374" stroke="#85B7EB" stroke-width="2.5" stroke-linecap="round" opacity="0.65"/>
+  <line x1="310" y1="388" x2="356" y2="388" stroke="#85B7EB" stroke-width="2.5" stroke-linecap="round" opacity="0.38"/>
+  <line x1="340" y1="408" x2="340" y2="394" stroke="#85B7EB" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arr)"/>
+  <path d="M328 415 Q340 408 352 415" fill="none" stroke="#B5D4F4" stroke-width="2.2" stroke-linecap="round" opacity="0.9"/>
+  <path d="M320 422 Q340 413 360 422" fill="none" stroke="#B5D4F4" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- Flow lines -->
+  <line class="flow"   x1="340" y1="332" x2="340" y2="214" stroke="#378ADD" stroke-width="2" fill="none" marker-end="url(#arr)" opacity="0.6"/>
+  <line class="flow-2" x1="385" y1="349" x2="480" y2="280" stroke="#378ADD" stroke-width="2" fill="none" marker-end="url(#arr)" opacity="0.6"/>
+  <line class="flow-3" x1="385" y1="411" x2="480" y2="480" stroke="#378ADD" stroke-width="2" fill="none" marker-end="url(#arr)" opacity="0.6"/>
+  <line class="flow-4" x1="340" y1="428" x2="340" y2="546" stroke="#378ADD" stroke-width="2" fill="none" marker-end="url(#arr)" opacity="0.6"/>
+  <line class="flow-5" x1="295" y1="411" x2="200" y2="480" stroke="#378ADD" stroke-width="2" fill="none" marker-end="url(#arr)" opacity="0.6"/>
+  <line class="flow-6" x1="295" y1="349" x2="200" y2="280" stroke="#378ADD" stroke-width="2" fill="none" marker-end="url(#arr)" opacity="0.6"/>
+
+  <!-- TOP: Bank (cx=340, cy=164) -->
+  <circle cx="340" cy="164" r="48" fill="#E6F1FB" stroke="#B5D4F4" stroke-width="1"/>
+  <rect x="322" y="174" width="7" height="20" rx="2" fill="#185FA5" opacity="0.85"/>
+  <rect x="336" y="174" width="7" height="20" rx="2" fill="#185FA5" opacity="0.85"/>
+  <rect x="350" y="174" width="7" height="20" rx="2" fill="#185FA5" opacity="0.85"/>
+  <rect x="318" y="194" width="43" height="4" rx="1.5" fill="#185FA5" opacity="0.6"/>
+  <polygon points="340,148 360,168 320,168" fill="#185FA5" opacity="0.9"/>
+
+  <!-- TOP-RIGHT: Pension / shield (cx=527, cy=272) -->
+  <circle cx="527" cy="272" r="48" fill="#E6F1FB" stroke="#B5D4F4" stroke-width="1"/>
+  <path d="M527 254 L545 261 L545 279 Q545 293 527 299 Q509 293 509 279 L509 261 Z" fill="none" stroke="#185FA5" stroke-width="2.5" stroke-linejoin="round" opacity="0.85"/>
+  <line x1="519" y1="277" x2="524" y2="284" stroke="#185FA5" stroke-width="2.5" stroke-linecap="round" opacity="0.85"/>
+  <line x1="524" y1="284" x2="535" y2="270" stroke="#185FA5" stroke-width="2.5" stroke-linecap="round" opacity="0.85"/>
+
+  <!-- BOTTOM-RIGHT: Mobile (cx=527, cy=488) -->
+  <circle cx="527" cy="488" r="48" fill="#E6F1FB" stroke="#B5D4F4" stroke-width="1"/>
+  <rect x="514" y="470" width="26" height="40" rx="5" fill="none" stroke="#185FA5" stroke-width="2.5" opacity="0.85"/>
+  <circle cx="527" cy="505" r="3" fill="#185FA5" opacity="0.7"/>
+  <line x1="521" y1="475" x2="533" y2="475" stroke="#185FA5" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- BOTTOM: Utilities / plug (cx=340, cy=596) -->
+  <circle cx="340" cy="596" r="48" fill="#E6F1FB" stroke="#B5D4F4" stroke-width="1"/>
+  <rect x="326" y="601" width="28" height="14" rx="4" fill="none" stroke="#185FA5" stroke-width="2.5" opacity="0.85"/>
+  <line x1="333" y1="590" x2="333" y2="601" stroke="#185FA5" stroke-width="2.5" stroke-linecap="round" opacity="0.85"/>
+  <line x1="347" y1="590" x2="347" y2="601" stroke="#185FA5" stroke-width="2.5" stroke-linecap="round" opacity="0.85"/>
+  <line x1="340" y1="615" x2="340" y2="625" stroke="#185FA5" stroke-width="2.5" stroke-linecap="round" opacity="0.85"/>
+
+  <!-- BOTTOM-LEFT: Car (cx=153, cy=488) -->
+  <circle cx="153" cy="488" r="48" fill="#E6F1FB" stroke="#B5D4F4" stroke-width="1"/>
+  <rect x="136" y="483" width="34" height="18" rx="5" fill="none" stroke="#185FA5" stroke-width="2.5" opacity="0.85"/>
+  <path d="M142 483 L146 474 L160 474 L164 483" fill="none" stroke="#185FA5" stroke-width="2.2" stroke-linejoin="round" opacity="0.85"/>
+  <circle cx="143" cy="501" r="4" fill="#185FA5" opacity="0.7"/>
+  <circle cx="163" cy="501" r="4" fill="#185FA5" opacity="0.7"/>
+
+  <!-- TOP-LEFT: HMRC document (cx=153, cy=272) -->
+  <circle cx="153" cy="272" r="48" fill="#E6F1FB" stroke="#B5D4F4" stroke-width="1"/>
+  <rect x="138" y="254" width="30" height="38" rx="4" fill="none" stroke="#185FA5" stroke-width="2.5" opacity="0.85"/>
+  <line x1="145" y1="266" x2="161" y2="266" stroke="#185FA5" stroke-width="2" stroke-linecap="round" opacity="0.65"/>
+  <line x1="145" y1="275" x2="161" y2="275" stroke="#185FA5" stroke-width="2" stroke-linecap="round" opacity="0.65"/>
+  <line x1="145" y1="284" x2="156" y2="284" stroke="#185FA5" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+
+</svg>
