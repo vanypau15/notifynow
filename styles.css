@@ -80,6 +80,7 @@
   border-color: hsl(var(--border-color));
 }
 
+
 body {
   background: linear-gradient(135deg, #C2D0DF, #FDF6F2, #FAF7F5);
   color: hsl(var(--body));
@@ -88,6 +89,7 @@ body {
   line-height: 1.65;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -362,14 +364,18 @@ html {
 }
 
 /* Press Strip */
+/* Press Strip */
 .press-strip {
-  padding: 2rem;
+  padding: 2rem 0;
   background: #ffffff;
   border-bottom: 1px solid hsl(var(--warm-dark));
+  overflow: hidden;
 }
 
 .press-container {
   text-align: center;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .press-label {
@@ -378,12 +384,32 @@ html {
   font-size: 0.75rem;
   color: hsl(var(--muted));
   margin-bottom: 1rem;
+  padding: 0 1rem;
 }
 
 .press-logos {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.press-track {
   display: flex;
   align-items: center;
   gap: 5.5rem;
+  width: max-content;
+  animation: scroll 20s linear infinite;
+  will-change: transform;
+}
+
+.press-logo-item {
+  flex: 0 0 140px;
+  width: 140px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
 }
 
@@ -393,16 +419,6 @@ html {
   object-fit: contain;
   opacity: 0.7;
   transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-/* base stays the same */
-.press-logo-item {
-  width: 140px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden; /* IMPORTANT */
 }
 
 .press-logos img:hover {
@@ -424,41 +440,38 @@ html {
   transform: scale(1.7) translateX(5%);
 }
 
-
 .logo-mirror img {
   background: white;
   mix-blend-mode: multiply;
 }
 
-
-/* container */
-.press-logos {
-  overflow: hidden;
-  position: relative;
-}
-
-/* moving track */
-.press-track {
-  display: flex;
-  gap: 5.5rem;
-  width: max-content;
-  align-items: center;
-  animation: scroll 20s linear infinite;
-}
-
-/* logos */
-.press-track img {
-  height: 24px;
-  opacity: 0.7;
-}
-
-/* animation */
 @keyframes scroll {
   from {
     transform: translateX(0);
   }
   to {
     transform: translateX(-50%);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .press-strip {
+    padding: 1.5rem 0;
+  }
+
+  .press-track {
+    gap: 2rem;
+  }
+
+  .press-logo-item {
+    flex: 0 0 110px;
+    width: 110px;
+  }
+
+  .press-track img {
+    max-width: 100px;
+    height: auto;
   }
 }
 
@@ -2006,4 +2019,3 @@ img {
     margin: 0 auto;
   }
 }
-
