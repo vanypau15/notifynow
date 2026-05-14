@@ -14,7 +14,7 @@ const steps = [
   {
     number: 3,
     title: "We take care of the rest",
-    description: "Each company is notified directly on your behalf. You will receive updates along the way and can return at any time to add more or make changes.",
+    description: "Each company is notified directly on your behalf. You can return at any time to add more or make changes.",
     image: "../assets/images/Thumbsupicon.png"
   }
 ];
