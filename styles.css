@@ -653,7 +653,7 @@ html {
   width: 320px;
   height: 320px;
 
-  background-image: url("/assets/images/NotifyNOWEmblem.png");
+  background-image: url("./assets/images/NotifyNOWEmblem.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
