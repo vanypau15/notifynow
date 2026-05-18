@@ -82,8 +82,7 @@
 
 
 body {
-  background: linear-gradient(135deg, #C2D0DF, #FDF6F2, #FAF7F5);
-  color: hsl(var(--body));
+  /* background: linear-gradient(135deg, hsl(var(--blue-pale)) 0%, white 60%); */
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   line-height: 1.65;
@@ -188,9 +187,9 @@ html {
   min-height: 100vh;
 }
 
-.bg-white {
+/* .bg-white {
   background-color: white;
-}
+} */
 
 /* Container */
 .container {
@@ -256,8 +255,9 @@ html {
 /* Hero */
 .hero {
   padding: 6rem 2rem;
-  background: linear-gradient(135deg, hsl(var(--blue-pale)) 0%, white 60%);
+  background: linear-gradient(135deg, #c2d0df, #fefbf9, #faf7f5);
 }
+
 
 .hero-container {
   display: flex;
@@ -270,6 +270,10 @@ html {
 .hero-left {
   flex: 1;
   max-width: 550px;
+}
+.badge-highlight {
+  font-weight: 700;
+  color: hsl(var(--blue-mid));
 }
 
 .badge {
@@ -315,8 +319,8 @@ html {
 
 /* IMAGE */
 .hero-image {
-  width: 480px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 620px;
   opacity: 0.95;
   filter: saturate(0.95) contrast(1.05);
 }

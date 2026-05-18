@@ -13,8 +13,11 @@ const navbarHTML = `
       <li><a href="partners.html#partners">Partner With Us</a></li>
     </ul>
 
-    <a href="https://app.notifynow.uk/portal" target="_blank" class="btn-outline">Login</a>
-    <a href="https://app.notifynow.uk/portal" target="_blank" class="btn-primary">Get Started</a>
+    <div class="nav-buttons">
+      <a href="https://app.notifynow.uk/portal" target="_blank" class="btn-outline">Login</a>
+      <a href="https://app.notifynow.uk/portal" target="_blank" class="btn-primary">Get Started</a>
+    </div>
+
   </div>
 </nav>
 `;
